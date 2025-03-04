@@ -1,6 +1,6 @@
 import {useState,FormEvent} from "react";
 import { useNavigate } from "react-router-dom";
-import {RoutesLinks} from "../../../routes/frontendRoutes.ts";
+import {RoutesLinks} from "../../routes/frontendRoutes.ts";
 
 export const useLogin = () =>{
     const navigate = useNavigate()
