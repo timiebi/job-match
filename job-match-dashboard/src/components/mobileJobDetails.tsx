@@ -1,7 +1,6 @@
 import React from "react";
-import {Job} from "../types/job";
+import { Job } from "../types/job";
 import ApplyButton from "./ApplyButton";
-import {X} from "lucide-react";
 
 interface MobileJobDetailsProps {
     job: Job;
@@ -10,12 +9,8 @@ interface MobileJobDetailsProps {
 
 const MobileJobDetails: React.FC<MobileJobDetailsProps> = ({job, onClose}) => {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 ">
+        <div onClick={onClose}  className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 ">
             <div className="bg-white w-full max-w-[90%] p-6 rounded-lg shadow-lg relative">
-                {/* Close Button */}
-                <button onClick={onClose} className="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
-                    <X className="w-6 h-6"/>
-                </button>
 
                 {/* Job Info */}
                 <h2 className="text-2xl font-semibold">{job.title}</h2>
@@ -31,7 +26,7 @@ const MobileJobDetails: React.FC<MobileJobDetailsProps> = ({job, onClose}) => {
                 </ul>
 
                 {/* Apply Button */}
-                <div className="mt-6">
+                <div className="mt-6" onClick={onClose} >
                     <ApplyButton job={job}/>
                 </div>
             </div>

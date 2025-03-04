@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import JobDetails from "../components/JobDetails";
-import { Job } from "../types/job";
-import { useJobStore } from "../store/jobstore.ts";
 import { Header } from "../components/header.tsx";
 import JobCard from "../components/jobCard.tsx";
+import JobDetails from "../components/JobDetails";
 import MobileJobDetails from "../components/mobileJobDetails.tsx";
+import { useJobStore } from "../store/jobstore.ts";
+import { Job } from "../types/job";
 
 export default function Home() {
     const { jobs, fetchJobs } = useJobStore();
@@ -36,7 +36,7 @@ export default function Home() {
                         AI-Powered Job Match
                     </h1>
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:max-w-[90%]">
-                        {jobs.map((job) => (
+                        {jobs.map((job:Job) => (
                             <JobCard key={job.id} job={job} onClick={() => handleJobClick(job)} />
                         ))}
                     </div>
