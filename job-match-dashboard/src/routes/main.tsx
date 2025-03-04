@@ -1,8 +1,8 @@
-import {createBrowserRouter, RouteObject} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home.tsx";
 import Login from "../pages/auth/login.tsx";
-import {RoutesLinks} from "./frontendRoutes.ts";
 import AuthGuard from "./authGuard.tsx";
+import { RoutesLinks } from "./frontendRoutes.ts";
 
 
 // function JobPage() {
@@ -10,7 +10,7 @@ import AuthGuard from "./authGuard.tsx";
 // }
 
 
-const routes: RouteObject[] = [
+const routes = [
     {
         path: RoutesLinks.login,
         element: <Login/>
